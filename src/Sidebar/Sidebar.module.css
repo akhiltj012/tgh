@@ -1,0 +1,20 @@
+.sidebar_main{
+    height: 100px;
+    width: 100%;
+    border: solid red;
+    display:flex;
+    justify-content: space-between;
+   padding-left: 30px;
+   padding-right: 30px;
+   padding-top: 15px;
+}
+.sidebar_main>div:nth-child(1){
+    width: 20%;
+font-size: 18px;
+font-weight: 800;
+}
+.sidebar_main>div:nth-child(2){
+    width: 20%;
+    font-size: 18px;
+    font-weight: 400;
+    }
