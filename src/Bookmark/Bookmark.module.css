@@ -1,6 +1,6 @@
 .main{
     background-color: rgb(126, 21, 225);
-    min-height: 1000px;
+    min-height: 2000px;
     height: auto;
     width: 100%;
 }
@@ -59,10 +59,14 @@
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         padding-bottom: 40px;
     }
-    .author img{
-        height: 30px;
-        width: 30px;
+    .author button{
+       font-size: 15px;
+      background-color: rgb(245, 249, 236);
+      border-radius: 10px;
+       margin-top: 10px;
+       color: blue;
     }

@@ -31,7 +31,7 @@ export const Bookmark = () => {
                      <div>
                         <div>{e.author}</div>
                         <div> 
-                         <img onClick={()=>remove(e)} src={bookmark}/> 
+                         <button onClick={()=>remove(e)}> remove</button> 
                         </div>
                      </div>
                  </div>
