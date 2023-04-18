@@ -1,28 +1,44 @@
-import React from 'react'
+import React, { useState,useEffect } from 'react'
 import styles from './Bookmark.module.css'
 import { Sidebar } from '../Sidebar/Sidebar'
 import bookmark  from '../../src/media/bookmark.png' 
 
 export const Bookmark = () => {
+    const [id,setId] = useState(JSON.parse(localStorage.getItem('id')));
+    const remove = (e)=>{
+       
+     setId(id.filter((el)=>el._id!==e._id))
+     localStorage.clear();
+     localStorage.setItem('id',JSON.stringify(id));
+     if(id.length===1){
+        localStorage.clear();
+    }
+    }
+   
   return (
     <div>
        <div><Sidebar/></div>
         <div>
-        <div className={styles.quote_box}>
-        <div className={styles.quote}>
-            <div>
-                dsfggdsfg
-            </div>
-        </div>
-        <div className={styles.author}>
-            <div>
-               <div>dfgert</div>
-               <div> 
-                <img src={bookmark}/> 
-               </div>
-            </div>
-        </div>
-    </div>
+            {id?.map((e)=>{
+                
+                 return  <div className={styles.quote_box}>
+                 <div className={styles.quote}>
+                     <div>
+                       {e.content}
+                     </div>
+                 </div>
+                 <div className={styles.author}>
+                     <div>
+                        <div>{e.author}</div>
+                        <div> 
+                         <img onClick={()=>remove(e)} src={bookmark}/> 
+                        </div>
+                     </div>
+                 </div>
+             </div>  
+                
+            })}
+     
         </div>
     </div>
   )

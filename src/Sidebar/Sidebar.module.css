@@ -1,7 +1,6 @@
 .sidebar_main{
     height: 100px;
     width: 100%;
-    border: solid red;
     display:flex;
     justify-content: space-between;
    padding-left: 30px;
