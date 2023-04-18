@@ -6,9 +6,9 @@ import bookmark  from '../../src/media/bookmark.png'
 export const Bookmark = () => {
     const [id,setId] = useState(JSON.parse(localStorage.getItem('id')));
     const remove = (e)=>{
-       
+       setId(JSON.parse(localStorage.getItem('id')))
+       localStorage.clear()
      setId(id.filter((el)=>el._id!==e._id))
-     localStorage.clear();
      localStorage.setItem('id',JSON.stringify(id));
      if(id.length===1){
         localStorage.clear();
@@ -16,7 +16,7 @@ export const Bookmark = () => {
     }
    
   return (
-    <div>
+    <div className={styles.main}>
        <div><Sidebar/></div>
         <div>
             {id?.map((e)=>{
