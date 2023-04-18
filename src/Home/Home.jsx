@@ -13,7 +13,7 @@ export const Home = () => {
     const [vis,setVis]=useState(true)
     const tagselect = (e)=>{
         setTag(e.target.value)
-  
+        fetch();
  
     }
     const bookmarked =()=>{
